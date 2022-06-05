@@ -1,0 +1,8 @@
+#!/bin/bash
+
+check() {
+  service::config SERVICE_WORDPRESS_PORT text "Input SERVICE_WORDPRESS_PORT:" 8080
+  service::config SERVICE_WORDPRESS_DB_PASSWORD text "Input SERVICE_WORDPRESS_DB_PASSWORD:" $(os::uuid)
+}
+
+check $@
