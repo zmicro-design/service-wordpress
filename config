@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export SERVICE_NAME=wordpress
 
 export SERVICE_WORDPRESS_IMAGE_VERSION=v1.0.0
@@ -5,3 +7,11 @@ export SERVICE_WORDPRESS_IMAGE_MYSQL_VERSION=v1.0.0
 export SERVICE_WORDPRESS_PORT=${SERVICE_WORDPRESS_PORT}
 
 export SERVICE_WORDPRESS_DB_PASSWORD=${SERVICE_WORDPRESS_DB_PASSWORD}
+
+if [ ! -d "${SERVICE_DATA}/mysql" ]; then
+  mkdir -p ${SERVICE_DATA}/mysql
+fi
+
+if [ ! -d "${SERVICE_DATA}/wordpress" ]; then
+  mkdir -p ${SERVICE_DATA}/wordpress
+fi
